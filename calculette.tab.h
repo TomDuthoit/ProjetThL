@@ -55,7 +55,8 @@ extern int yydebug;
     NUM = 258,
     SIN = 259,
     COS = 260,
-    TAN = 261
+    TAN = 261,
+    EXP = 262
   };
 #endif
 

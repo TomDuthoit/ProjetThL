@@ -14,6 +14,7 @@
 %token SIN
 %token COS
 %token TAN
+%token EXP
 %left '+' '-'
 %left '*' '/'
 
@@ -35,6 +36,7 @@ expr:
      | SIN '(' expr ')'  { $$ = sin($3);  printf("sin (%g) = %g\n", $3, $$); };
      | COS '(' expr ')'  { $$ = cos($3);  printf("cos (%g) = %g\n", $3, $$); };
      | TAN '(' expr ')'  { $$ = tan($3);  printf("tan(%g) = %g\n", $3, $$); };
+     | EXP '(' expr ')'  { $$ = exp($3);  printf("exp(%g) = %g\n", $3, $$); };
 
 %%
 

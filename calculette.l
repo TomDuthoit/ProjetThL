@@ -11,7 +11,7 @@ sin|sinus|Sin|Sinus|SINUS|SIN {  return SIN; }
 cos|cosinus|Cos|Cosinus|COSINUS|COS { return COS ; }
 tan|tangente|Tan|Tangente|TANGENTE|TAN { return TAN ; }
 Pi|PI|pi    {  yylval = 3.14159265359; return NUM; }
-un     {  yylval = 1.; return NUM; }
+e|exp|Exp|EXP {return EXP ; }
 \n     {  return '\n'; }
 plus   { return '+'; }
 fois   { return '*'; }
