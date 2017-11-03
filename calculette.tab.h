@@ -54,9 +54,19 @@ extern int yydebug;
   {
     NUM = 258,
     SIN = 259,
-    COS = 260,
-    TAN = 261,
-    EXP = 262
+    ASIN = 260,
+    SINH = 261,
+    COS = 262,
+    ACOS = 263,
+    COSH = 264,
+    TAN = 265,
+    ATAN = 266,
+    TANH = 267,
+    EXP = 268,
+    LOG = 269,
+    LOG10 = 270,
+    POW = 271,
+    SQRT = 272
   };
 #endif
 
