@@ -2,11 +2,13 @@
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include "mathlobster.tab.h"
+
 %}
 
 
 %%
 [0-9]+(\.[0-9]*)?([Ee][0-9]+)? { yylval = atof(yytext); return NUM; }
+x|X														 {return VAR ;}
 sin|sinus|Sin|Sinus|SINUS|SIN { return SIN; }
 asin|asinus|Asin|ASinus|ASINUS|ASIN|arcsin|ARCSIN { return ASIN; }
 sinh|sinush|Sinh|Sinush|SINUSH|SINH|sinushyperbolique|SINUSHYPERBOLIQUE { return SINH; }

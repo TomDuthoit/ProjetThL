@@ -3,6 +3,9 @@
 	#include <stdlib.h>
 	#include <math.h>
 	extern int yylex ();
+
+	double varx = 0.;
+
 %}
 
 
@@ -14,6 +17,7 @@
 %token NUM
 %token SIN
 %token ASIN
+%token VAR
 %token SINH
 %token COS
 %token ACOS
@@ -37,10 +41,12 @@ program: /* empty */
 
 line: '\n'
 	| expr '\n'					{ printf("\nResult : %g\n", $1); }
+	|VAR '=' NUM {varx = $3; }
 	;
 
 expr:
 	NUM	 						{ $$ = $1;				/* printf("%g ", $1); */ }
+	|VAR						{ $$ = varx ;  }
 	| expr '+' expr	 			{ $$ = $1 + $3;			printf("%g + %g = %g\n", $1, $3, $$); }
 	| expr '-' expr	 			{ $$ = $1 - $3;			printf("%g - %g = %g\n", $1, $3, $$); }
 	| expr '*' expr			 	{ $$ = $1 * $3;			printf("%g * %g = %g\n", $1, $3, $$);}
