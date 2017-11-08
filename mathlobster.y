@@ -41,7 +41,7 @@ program: /* empty */
 
 line: '\n'
 	| expr '\n'					{ printf("\nResult : %g\n", $1); }
-	|VAR '=' NUM {varx = $3; }
+	|VAR '=' expr {varx = $3; }
 	;
 
 expr:
