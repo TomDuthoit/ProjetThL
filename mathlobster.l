@@ -8,7 +8,7 @@
 
 %%
 [0-9]+(\.[0-9]*)?([Ee][0-9]+)? { yylval = atof(yytext); return NUM; }
-x|X														 {return VAR ;}
+
 sin|sinus|Sin|Sinus|SINUS|SIN { return SIN; }
 asin|asinus|Asin|ASinus|ASINUS|ASIN|arcsin|ARCSIN { return ASIN; }
 sinh|sinush|Sinh|Sinush|SINUSH|SINH|sinushyperbolique|SINUSHYPERBOLIQUE { return SINH; }
@@ -25,6 +25,7 @@ log10|LOG10|Log10 {return LOG10 ; }
 pow|POW|Pow {return POW ; }
 sqrt|SQRT|racine|RACINE|Racine|Sqrt {return SQRT ; }
 \n { return '\n'; }
+[a-zA-Z_][a-zA-Z_0-9]*														 {return VAR ;}
 " " {}
 . { return yytext[0]; }
 %%

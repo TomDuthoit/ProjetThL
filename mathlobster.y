@@ -4,9 +4,11 @@
 	#include <math.h>
 	#include <string>
 	#include<iostream>
+	#include<map>
 	extern int yylex ();
-
+	extern char* yytext ();
 	double varx = 0.;
+	std::map<std::string , double> variables;
 	void yyerror(std::string s) {
 		std::cout<< s << std::endl;
 	}
@@ -45,7 +47,7 @@ program: /* empty */
 
 line: '\n'
 	| expr '\n'					{ printf("\nResult : %g\n", $1); }
-	|VAR '=' expr {varx = $3; }
+	|VAR '=' expr {variables[yytext] = $3; }
 	;
 
 expr:
