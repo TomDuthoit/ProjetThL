@@ -2,10 +2,14 @@
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <math.h>
+	#include <string>
+	#include<iostream>
 	extern int yylex ();
 
 	double varx = 0.;
-
+	void yyerror(std::string s) {
+		std::cout<< s << std::endl;
+	}
 %}
 
 
@@ -68,9 +72,7 @@ expr:
 %%
 
 
-yyerror(char *s) {
-	printf("%s\n", s);
-}
+
 
 int main(void) {
 	yyparse();

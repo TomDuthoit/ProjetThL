@@ -4,12 +4,12 @@ clear:
 	rm mathlobster
 
 build:
-	flex -o mathlobster.c mathlobster.l
+	flex -o mathlobster.cpp mathlobster.l
 	bison -d mathlobster.y
-	gcc mathlobster.c mathlobster.tab.c -o mathlobster_program -lm
+	g++ mathlobster.cpp mathlobster.tab.c -o mathlobster_program -lm
 
 clean:
-	rm mathlobster.c
+	rm mathlobster.cpp
 	rm mathlobster.tab.c
 	rm mathlobster.tab.h
 	clear
