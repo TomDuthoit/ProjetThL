@@ -1,0 +1,2 @@
+./drawFonc -p [1 1 1] => Trace le polynome X²+X+1.
+./drawFonc -f cos() -c [2*pi 0]=> Trace la fonction cos(2pix).
