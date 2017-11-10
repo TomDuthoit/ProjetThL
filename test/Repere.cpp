@@ -30,10 +30,17 @@ Repere::Repere(sf::RenderWindow *window, sf::VideoMode *videoMode)
 	this->videoMode = videoMode;
 	this->lx = 30;
 	this->ly = 30;
+	//this->drawPoint(100,100);
+	for(auto i = x+lx; i < videoMode->width; i+=lx){
+		drawScaleX(i,y);
+		drawScaleX(2*x-i,y);
 
-		drawScaleX(x+lx,y);
+	}
+	for(auto i = y+ly; i < videoMode->height; i+=lx){
+		drawScaleY(x,i);
+		drawScaleY(x,2*y-i);
 
-	
+	}
 }
 
 
@@ -69,27 +76,36 @@ void Repere::drawPoint(double x, double y){
 	auto absColor = sf::Color(0, 0, 0, 255);
 
    // définit un rectangle de 120x50
-	sf::RectangleShape rectangle(sf::Vector2f(x, y));
+	sf::RectangleShape rectangle(sf::Vector2f(10, 10));
+	rectangle.setPosition(x, y);
 	rectangle.setFillColor(absColor);
 
-// change sa taille en 100x100
-	rectangle.setSize(sf::Vector2f(10, 10));
 
-	this->window->draw(rectangle);
+	window->draw(rectangle);
 
 
 }
 
 void Repere::drawScaleX(double x, double y){
-	cout << "salut" << endl;
 	auto absColor = sf::Color(0, 0, 0, 255);
 
    // définit un rectangle de 120x50
-	sf::RectangleShape rectangle(sf::Vector2f(x, y));
+	sf::RectangleShape rectangle(sf::Vector2f(1, 5));
+	rectangle.setPosition(x-0.5, y-2.5);
 	rectangle.setFillColor(absColor);
 
-// change sa taille en 100x100
-	rectangle.setSize(sf::Vector2f(10, 10));
+
+	this->window->draw(rectangle);
+
+}
+void Repere::drawScaleY(double x, double y){
+	auto absColor = sf::Color(0, 0, 0, 255);
+
+   // définit un rectangle de 120x50
+	sf::RectangleShape rectangle(sf::Vector2f(5, 1));
+	rectangle.setPosition(x-2.5, y-0.5);
+	rectangle.setFillColor(absColor);
+
 
 	this->window->draw(rectangle);
 

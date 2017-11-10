@@ -7,7 +7,7 @@
 int main()
 {
 
-    auto videoMode = sf::VideoMode(512, 256);
+    auto videoMode = sf::VideoMode(1024, 512);
     // create the window
     sf::RenderWindow window(videoMode, "Plot");
 
@@ -27,7 +27,7 @@ int main()
         // draw it
         window.clear( sf::Color(255, 255, 255, 255));
         Repere r(&window,&videoMode);
-        r.drawPoint(10,10);
+        //r.drawPoint(100,100);
         window.display();
     }
 

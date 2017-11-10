@@ -17,6 +17,7 @@ public:
 
   void drawPoint(double, double);
   void drawScaleX(double x, double y);
+  void drawScaleY(double x, double y);
 
   // Autres méthodes
   void afficher() const;
