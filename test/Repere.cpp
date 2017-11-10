@@ -4,8 +4,11 @@
 
 using namespace std;
 
-Repere::Repere() : x(0), y(0)
-{}
+Repere::Repere(auto window)
+{
+
+
+}
 
 Repere::Repere(double x, double y) : x(x), y(y)
 {}

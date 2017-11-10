@@ -32,8 +32,7 @@ void DrawRepere(auto window,auto videoMode){
 
 int main()
 {
-    Repere a;
-    a.afficher();
+   
     auto videoMode = sf::VideoMode(512, 256);
     // create the window
     sf::RenderWindow window(videoMode, "Plot");

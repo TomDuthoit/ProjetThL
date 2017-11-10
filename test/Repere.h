@@ -7,7 +7,7 @@ class Repere
 {
 public:
   // Constructeurs
-  Repere();
+  Repere(auto window);
   Repere(double x, double y);
 
   //Accesseurs et mutateurs
@@ -21,6 +21,7 @@ public:
 
 private: 
   double x,y;
+  auto window;
 };
 
 #endif
